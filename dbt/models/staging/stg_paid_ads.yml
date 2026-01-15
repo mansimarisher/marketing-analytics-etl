@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_paid_ads
+    description: "Cleaned and standardized paid ads data from Python ETL"
+    columns:
+      - name: ad_id
+        tests:
+          - not_null
+
+      - name: ad_date
+        tests:
+          - not_null
+
+      - name: cost
+        tests:
+          - not_null
+
+      - name: sale_amount
+        tests:
+          - not_null

@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: marketing_postgres
+    environment:
+      POSTGRES_USER: marketing_user
+      POSTGRES_PASSWORD: marketing_pass
+      POSTGRES_DB: marketing_db
+    ports:
+      - "5433:5432"   # ⬅️ HOST:CONTAINER
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

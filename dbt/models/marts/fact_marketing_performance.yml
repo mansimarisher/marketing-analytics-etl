@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: fact_marketing_performance
+    tests:
+      - not_null:
+          column_name: ad_id
+      - not_null:
+          column_name: ad_date
+
+    columns:
+      - name: impressions
+        tests:
+          - not_null
+      - name: clicks
+        tests:
+          - not_null
+      - name: cost
+        tests:
+          - not_null
+      - name: sale_amount
+        tests:
+          - not_null

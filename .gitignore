@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+
+# dbt
+target/
+logs/
+dbt_packages/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+
+# Data (raw files)
+data/raw/*
+data/processed/*
+
+# Power BI (optional – add later)
+*.pbix
