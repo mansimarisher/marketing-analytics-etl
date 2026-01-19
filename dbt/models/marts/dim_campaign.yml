@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_campaign
+    description: "Campaign dimension with surrogate campaign_id"
+
+    columns:
+      - name: campaign_id
+        tests:
+          - not_null
+          - unique
+
+      - name: campaign_name
+        tests:
+          - not_null

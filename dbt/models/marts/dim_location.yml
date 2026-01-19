@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_location
+    columns:
+      - name: location_id
+        tests:
+          - not_null
+          - unique
+
+      - name: location
+        tests:
+          - not_null

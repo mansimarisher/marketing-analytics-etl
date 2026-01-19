@@ -1,4 +1,10 @@
 select
-    distinct
+    dense_rank() over (order by device) as device_id,
     device
-from {{ ref('stg_paid_ads') }}
+from (
+    select distinct device
+    from  {{ ref('stg_paid_ads') }}
+
+) t
+
+-- star schema refactor

@@ -1,4 +1,8 @@
 select
-    distinct
+    dense_rank() over (order by location) as location_id,
     location
-from {{ ref('stg_paid_ads') }}
+from (
+    select distinct location
+    from {{ ref('stg_paid_ads') }}
+
+) t

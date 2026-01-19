@@ -2,72 +2,62 @@
 -- Grain: One row per Ad per day per device per location per keyword
 -- Source: stg_paid_ads
 
-with base as (
+select
+    s.ad_id,
 
-    select
-        ad_id,
-        campaign_name,
-        device,
-        location,
-        keyword,
-        ad_date,
+    d.date_id,
+    c.campaign_id,
+    dv.device_id,
+    l.location_id,
+    k.keyword_id,
 
-        impressions,
-        clicks,
-        leads,
-        conversions,
+    -- base metrics
+    s.impressions,
+    s.clicks,
+    s.conversions,
+    s.cost,
+    s.sale_amount,
 
-        cost,
-        sale_amount
+    -- derived metrics
+    case when s.impressions > 0
+        then s.clicks::float / s.impressions
+    end as ctr,
 
-    from {{ ref('stg_paid_ads') }}
+    case when s.clicks > 0
+        then s.cost / s.clicks
+    end as cpc,
 
-),
+    case when s.clicks > 0
+        then s.conversions::float / s.clicks
+    end as conversion_rate,
 
-metrics as (
+    case when s.cost > 0
+        then s.sale_amount / s.cost
+    end as roas,
 
-    select
-        ad_id,
-        campaign_name,
-        device,
-        location,
-        keyword,
-        ad_date,
+    s.sale_amount - s.cost as profit
 
-        impressions,
-        clicks,
-        leads,
-        conversions,
+from {{ ref('stg_paid_ads') }} s
 
-        cost,
-        sale_amount,
+left join {{ ref('dim_campaign') }} c
+    on s.campaign = c.campaign_name
 
-        -- Derived metrics (trusted)
-        case
-            when impressions > 0
-            then clicks::float / impressions
-            else 0
-        end as ctr,
+left join {{ ref('dim_device') }} dv
+    on s.device = dv.device
 
-        case
-            when clicks > 0
-            then conversions::float / clicks
-            else 0
-        end as conversion_rate,
+left join {{ ref('dim_location') }} l
+    on s.location = l.location
 
-        case
-            when cost > 0
-            then sale_amount / cost
-            else 0
-        end as roas,
+left join {{ ref('dim_keyword') }} k
+    on s.keyword = k.keyword
 
-        case
-            when conversions > 0
-            then cost / conversions
-            else null
-        end as cac
+left join {{ ref('dim_date') }} d
+    on s.ad_date::date = d.date_day
 
-    from base
-)
+where s.ad_date is not null
 
-select * from metrics
+
+
+    
+
+

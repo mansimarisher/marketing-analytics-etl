@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_device
+    description: "Device dimension with surrogate device_id"
+
+    columns:
+      - name: device_id
+        description: "Surrogate key for device"
+        tests:
+          - not_null
+          - unique
+
+      - name: device
+        description: "Normalized device name"
+        tests:
+          - not_null

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_keyword
+    description: "Keyword dimension for paid search"
+
+    columns:
+      - name: keyword_id
+        description: "Surrogate key for keyword"
+        tests:
+          - not_null
+          - unique
+
+      - name: keyword
+        description: "Normalized keyword text"
+        tests:
+          - not_null

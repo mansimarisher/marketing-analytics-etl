@@ -2,22 +2,61 @@ version: 2
 
 models:
   - name: fact_marketing_performance
-    tests:
-      - not_null:
-          column_name: ad_id
-      - not_null:
-          column_name: ad_date
+    description: "Fact table containing daily marketing performance metrics"
 
     columns:
+      - name: ad_id
+        description: "Unique ad identifier"
+        tests:
+          - not_null
+          - unique
+
+      - name: date_id
+        description: "Foreign key to dim_date"
+        tests:
+          - not_null
+
+      - name: campaign_id
+        description: "Foreign key to dim_campaign"
+        tests:
+          - not_null
+
+      - name: device_id
+        description: "Foreign key to dim_device"
+        tests:
+          - not_null
+
+      - name: location_id
+        description: "Foreign key to dim_location"
+        tests:
+          - not_null
+
+      - name: keyword_id
+        description: "Foreign key to dim_keyword"
+        tests:
+          - not_null
+
       - name: impressions
+        description: "Number of ad impressions"
         tests:
           - not_null
+
       - name: clicks
+        description: "Number of ad clicks"
         tests:
           - not_null
+
+      - name: conversions
+        description: "Number of conversions"
+        tests:
+          - not_null
+
       - name: cost
+        description: "Marketing spend"
         tests:
           - not_null
+
       - name: sale_amount
+        description: "Revenue generated"
         tests:
           - not_null
