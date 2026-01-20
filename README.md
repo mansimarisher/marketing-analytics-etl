@@ -151,6 +151,18 @@ Data reliability is enforced using **dbt tests**, including:
 This ensures that dashboards are built on **trusted, auditable data**.
 
 ---
+## dbt Documentation
+
+This project includes generated dbt documentation with:
+- Model lineage
+- Column-level descriptions
+- Data tests and dependencies
+
+To view locally:
+1. Open `docs/dbt/index.html` in a browser
+
+> Note: Documentation is generated via `dbt docs generate`
+
 
 ## Dashboard Suite
 
