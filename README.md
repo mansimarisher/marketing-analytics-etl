@@ -87,7 +87,6 @@ marketing-analytics-etl/
 ├── requirements.txt
 └── README.md
 
-
 ---
 
 ## Data Modeling Approach
@@ -167,9 +166,7 @@ Key metrics:
 - ROAS
 - CAC
 
-📸 Screenshot placeholder:  
-`<img width="938" height="532" alt="Screenshot 2026-01-20 153003" src="https://github.com/user-attachments/assets/55a470ab-3899-4f82-a91f-11322501ee44" />
-`
+
 
 ---
 
@@ -182,9 +179,7 @@ Key insights:
 - Conversion rates by stage
 - Time-based funnel trends
 
-📸 Screenshot placeholder:  
-`<img width="952" height="500" alt="Screenshot 2026-01-20 153019" src="https://github.com/user-attachments/assets/5c9ee913-ff51-4e94-9132-15c5a3d7c908" />
-`
+
 
 ---
 
@@ -198,9 +193,7 @@ Key insights:
 - Cost efficiency by keyword
 - Profit contribution analysis
 
-📸 Screenshot placeholder:  
-`<img width="965" height="494" alt="Screenshot 2026-01-20 160816" src="https://github.com/user-attachments/assets/6191b9ae-a84d-46c1-8b53-efa0f4874944" />
-`
+
 
 ---
 
