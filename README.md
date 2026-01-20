@@ -42,7 +42,7 @@ The result is a system that supports **continuous optimization**, not just retro
 ---
 
 ## High-Level Architecture
-
+```
 Raw Marketing Data (CSV / Ad Platform Exports)
 ↓
 Python ETL (Extract → Clean → Load)
@@ -54,7 +54,7 @@ dbt Core (Transformations + Tests)
 Analytics Warehouse (Star Schema)
 ↓
 Metabase Dashboards (Decision Layer)
-
+```
 ---
 
 ## Repository Structure
