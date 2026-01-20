@@ -58,9 +58,8 @@ Metabase Dashboards (Decision Layer)
 ---
 
 ## Repository Structure
-
+```
 marketing-analytics-etl/
-│
 ├── data/
 │ ├── raw/ # Raw marketing data exports
 │ └── processed/ # Cleaned intermediate data
@@ -86,7 +85,7 @@ marketing-analytics-etl/
 ├── docker-compose.yml # PostgreSQL container
 ├── requirements.txt
 └── README.md
-
+```
 ---
 
 ## Data Modeling Approach
