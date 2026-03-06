@@ -6,8 +6,6 @@ This repository contains a **production-style Marketing Analytics platform** des
 
 The system ingests raw marketing performance data, transforms it using analytics engineering best practices, enforces data quality, and exposes **decision-ready metrics** through executive dashboards.
 
-The project is intentionally scoped and implemented to reflect **real-world FAANG analytics standards**, not a toy or demo setup.
-
 ---
 
 ## Business Context
